@@ -32,3 +32,6 @@ npm install          # baixa o Mermaid (obrigatório)
 
 ## Limitações
 Parser por heurística (não é AST completa): não cobre comprehensions, `match`/`switch`, `do…while`, lambdas nem `if` de uma linha sem chaves. `try/except` e `class` são achatados no fluxo.
+
+<img width="982" height="618" alt="image" src="https://github.com/user-attachments/assets/9bf99d02-347f-4c3b-b0a6-4f17684c551e" />
+
