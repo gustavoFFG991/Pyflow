@@ -1,0 +1,47 @@
+{
+  "name": "pyflow-visualizer",
+  "displayName": "PyFlow Visualizer",
+  "description": "Transforme código Python, JavaScript, Java e C em fluxogramas e resumos em passos, em português.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Visualization", "Education", "Other"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "pyflow.showFlowchart", "title": "PyFlow: Criar fluxograma", "icon": "$(type-hierarchy)" },
+      { "command": "pyflow.showSteps", "title": "PyFlow: Resumo em passos", "icon": "$(list-ordered)" }
+    ],
+    "menus": {
+      "editor/title": [
+        { "command": "pyflow.showFlowchart", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/", "group": "navigation@1" },
+        { "command": "pyflow.showSteps", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/", "group": "navigation@2" }
+      ],
+      "editor/context": [
+        { "command": "pyflow.showFlowchart", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/", "group": "pyflow@1" },
+        { "command": "pyflow.showSteps", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/", "group": "pyflow@2" }
+      ],
+      "commandPalette": [
+        { "command": "pyflow.showFlowchart", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/" },
+        { "command": "pyflow.showSteps", "when": "resourceLangId =~ /^(python|javascript|typescript|javascriptreact|typescriptreact|java|c|cpp)$/" }
+      ]
+    },
+    "configuration": {
+      "title": "PyFlow Visualizer",
+      "properties": {
+        "pyflow.autoUpdate": { "type": "boolean", "default": true, "description": "Atualiza o fluxograma e o resumo enquanto você edita o arquivo." },
+        "pyflow.codeLens": { "type": "boolean", "default": true, "description": "Mostra os atalhos “Criar fluxograma” e “Resumo em passos” no topo do arquivo." }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "mermaid": "10.9.1"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0"
+  }
+}
