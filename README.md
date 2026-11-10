@@ -35,3 +35,5 @@ Parser por heurística (não é AST completa): não cobre comprehensions, `match
 
 <img width="982" height="618" alt="image" src="https://github.com/user-attachments/assets/9bf99d02-347f-4c3b-b0a6-4f17684c551e" />
 
+<img width="490" height="614" alt="image" src="https://github.com/user-attachments/assets/53464b09-8783-4dfa-b17e-a3d2a3177e88" />
+
